@@ -22,16 +22,16 @@ llm = Groq(model="llama3-70b-8192", api_key=GROOQ_API_KEY)
 def analyze_stock_data(technical_data, fundamental_data):
     # Create a prompt template for analysis
     template = (
-        "Answer in bahasa indonesia"
-        "Analyze the following stock data using both technical and fundamental analysis:\n"
-        "Technical Data (Open and Close prices):\n{technical_data}\n\n"
-        "Fundamental Data:\n{fundamental_data}\n\n"
-        "Provide insights on:\n"
-        "1. Overall trend\n"
-        "2. Key technical indicators\n"
-        "3. Important fundamental metrics\n"
-        "4. Potential strengths and weaknesses\n"
-        "5. Any notable patterns or anomalies"
+        "Analisis data saham berikut menggunakan analisis teknikal dan fundamental:\n"
+        "Data Teknikal (Harga Buka dan Tutup):\n{technical_data}\n\n"
+        "Data Fundamental:\n{fundamental_data}\n\n"
+        "Berikan wawasan tentang:\n"
+        "1. Tren keseluruhan\n"
+        "2. Indikator teknikal utama\n"
+        "3. Metrik fundamental penting\n"
+        "4. Kekuatan dan kelemahan potensial\n"
+        "5. Pola atau anomali yang dapat diperhatikan"
+        "Rekomendasi posisi beli dan jual"
     )
     prompt = PromptTemplate(template)
 
