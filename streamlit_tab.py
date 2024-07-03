@@ -86,7 +86,7 @@ st.set_page_config(
     menu_items ={
         'About': "# This is a header. This is an *extremely* cool app!"
         } )
-st.title("Stock Data Analyzer v1.1")
+st.title("Cumi Cumi darat")
 tab1, tab2, tab3 = st.tabs(["Analyze", "Stock Data", "Financial Statement"])
 
 # Sidebar for inputs
@@ -140,15 +140,15 @@ if analyze_button:
             
         with tab2: 
             # Display stock data
-            st.subheader("Stock Data")
+            st.subheader("Stock Data {symbol}")
             st.dataframe(stock_data)
 
             # Display specific fundamental information
-            st.subheader("Stock Information")
+            st.subheader("Stock Information {symbol}")
             st.markdown(fundamental_data_str)        
 
             # Display financial metrics using st.metric
-            st.subheader("Financial Statements")
+            st.subheader("Financial Statements {symbol}")
             st.metric(label="Income Statement", value="Income Statement")
             st.dataframe(income_stmt)
 
@@ -169,7 +169,7 @@ if analyze_button:
 
         with tab3:
             # Plot Total Revenue per quarter
-            st.subheader("Total Revenue per Quarter")
+            st.subheader("Total Revenue per Quarter {symbol}")
             if 'Total Revenue' in quarterly_income_stmt.index:
                 total_revenue = quarterly_income_stmt.loc['Total Revenue'].dropna()
                 fig = go.Figure()
