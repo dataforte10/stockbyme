@@ -22,6 +22,7 @@ llm = Groq(model="llama3-70b-8192", api_key=GROOQ_API_KEY)
 def analyze_stock_data(technical_data, fundamental_data):
     # Create a prompt template for analysis
     template = (
+        "Anda bertindak sebagai Analis saham yang bertugas menganalisa data saham sesuai dengan data yang disajikan.Tuliskan hasil analisa anda dalam bahasa indonesia yang sederhana. pastikan menggunakan currency yang sesuai untuk seluruh datanya\n\n"
         "Analisis data saham berikut menggunakan analisis teknikal dan fundamental:\n"
         "Data Teknikal (Harga Buka dan Tutup):\n{technical_data}\n\n"
         "Data Fundamental:\n{fundamental_data}\n\n"
@@ -60,8 +61,8 @@ def extract_specific_fundamental_data(details):
 # Format specific fundamental data for display
 def format_specific_fundamental_data(specific_data):
     formatted_data = (
-        f"**Current Price (Harga Saham Saat Ini)**: {specific_data['Current Price (Harga Saham Saat Ini)']} IDR\n\n"
-        f"**Market Cap (Kapitalisasi Pasar)**: {specific_data['Market Cap (Kapitalisasi Pasar)']} IDR\n\n"
+        f"**Current Price (Harga Saham Saat Ini)**: {specific_data['Current Price (Harga Saham Saat Ini)']}\n\n"
+        f"**Market Cap (Kapitalisasi Pasar)**: {specific_data['Market Cap (Kapitalisasi Pasar)']}\n\n"
         f"**Price to Earnings Ratio (P/E Ratio)**:\n"
         f"  - Trailing P/E: {specific_data['Price to Earnings Ratio (P/E Ratio)']['Trailing P/E']}\n"
         f"  - Forward P/E: {specific_data['Price to Earnings Ratio (P/E Ratio)']['Forward P/E']}\n\n"
